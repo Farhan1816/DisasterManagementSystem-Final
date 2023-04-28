@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class switchWindow {
+public class LoginController {
 
     private Stage stage;
     private Scene scene;
@@ -36,12 +36,9 @@ public class switchWindow {
     @FXML
     Button loginButton;
 
-
-
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    Button disaster, victim, support;
+
 
     public void submit(ActionEvent event) throws IOException {
 
@@ -65,4 +62,30 @@ public class switchWindow {
         stage.show();
     }
 
+    public void switchToDisaster(ActionEvent event) throws IOException
+    {
+        Parent root = FXMLLoader.load(getClass().getResource("disaster.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToSupport(ActionEvent event) throws IOException
+    {
+        Parent root = FXMLLoader.load(getClass().getResource("Support.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToVictim(ActionEvent event) throws IOException
+    {
+        Parent root = FXMLLoader.load(getClass().getResource("Victim.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
