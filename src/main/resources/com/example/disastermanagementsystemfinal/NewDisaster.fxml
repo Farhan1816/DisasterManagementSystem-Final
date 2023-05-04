@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.disastermanagementsystemfinal.NewDisasterController">
    <top>
       <HBox alignment="TOP_CENTER" prefHeight="92.0" prefWidth="800.0" style="-fx-background-color: #36FAFA;" BorderPane.alignment="CENTER">
@@ -32,13 +31,13 @@
                   <Font name="Mallanna" size="23.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="disasterType" layoutX="194.0" layoutY="31.0" prefHeight="35.0" prefWidth="206.0" />
+            <ChoiceBox fx:id="DisasterType" layoutX="194.0" layoutY="31.0" prefHeight="35.0" prefWidth="206.0" />
             <Label layoutX="24.0" layoutY="72.0" prefHeight="50.0" prefWidth="129.0" text="Location ">
                <font>
                   <Font name="Mallanna" size="23.0" />
                </font>
             </Label>
-            <TextField fx:id="location" layoutX="194.0" layoutY="76.0" prefHeight="43.0" prefWidth="560.0" />
+            <TextField fx:id="Location" layoutX="194.0" layoutY="76.0" prefHeight="43.0" prefWidth="560.0" />
             <Label layoutX="24.0" layoutY="128.0" prefHeight="48.0" prefWidth="81.0" text="Intensity">
                <font>
                   <Font name="Mallanna" size="23.0" />
@@ -49,7 +48,7 @@
                   <Font name="Mallanna" size="23.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="intensityType" layoutX="195.0" layoutY="134.0" prefHeight="37.0" prefWidth="204.0" />
+            <ChoiceBox fx:id="Intensity" layoutX="195.0" layoutY="134.0" prefHeight="37.0" prefWidth="204.0" />
             <Label layoutX="24.0" layoutY="183.0" prefHeight="48.0" prefWidth="81.0" text="District">
                <font>
                   <Font name="Mallanna" size="23.0" />
@@ -60,7 +59,7 @@
                   <Font name="Mallanna" size="23.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="district" layoutX="195.0" layoutY="189.0" maxHeight="100.0" maxWidth="400.0" prefHeight="37.0" prefWidth="204.0" />
+            <ChoiceBox fx:id="District" layoutX="195.0" layoutY="189.0" maxHeight="100.0" maxWidth="400.0" prefHeight="37.0" prefWidth="204.0" />
             <Label layoutX="24.0" layoutY="230.0" prefHeight="48.0" prefWidth="113.0" text="Approximate">
                <font>
                   <Font name="Mallanna" size="23.0" />
@@ -86,7 +85,7 @@
                   <Font name="Mallanna" size="23.0" />
                </font>
             </Label>
-            <TextField fx:id="location1" layoutX="193.0" layoutY="254.0" prefHeight="43.0" prefWidth="562.0" />
+            <TextField fx:id="ApproximateDate" layoutX="193.0" layoutY="254.0" prefHeight="43.0" prefWidth="562.0" />
             <Label layoutX="24.0" layoutY="315.0" prefHeight="48.0" prefWidth="113.0" text="Approximate">
                <font>
                   <Font name="Mallanna" size="23.0" />
@@ -102,8 +101,8 @@
                   <Font name="Mallanna" size="23.0" />
                </font>
             </Label>
-            <TextField fx:id="location11" layoutX="192.0" layoutY="339.0" prefHeight="43.0" prefWidth="562.0" />
-            <Button layoutX="337.0" layoutY="415.0" mnemonicParsing="false" text="Confirm">
+            <TextField fx:id="ApproximateTime" layoutX="192.0" layoutY="339.0" prefHeight="43.0" prefWidth="562.0" />
+            <Button fx:id="Confirm" layoutX="337.0" layoutY="415.0" mnemonicParsing="false" onAction="#confirmed" text="Confirm">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>

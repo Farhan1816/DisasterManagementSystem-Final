@@ -3,6 +3,7 @@ package com.example.disastermanagementsystemfinal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,9 +16,13 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.*;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController{
 
+    private int arr[]= new int[10];
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -88,4 +93,6 @@ public class LoginController {
         stage.setScene(scene);
         stage.show();
     }
+
+
 }

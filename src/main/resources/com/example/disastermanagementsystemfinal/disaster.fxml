@@ -22,29 +22,29 @@
       </HBox>
    </top>
    <center>
-      <AnchorPane fx:id="erase5" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="Disaster1" layoutX="8.0" layoutY="107.0" mnemonicParsing="false" onAction="#switchtoNewDisaster" prefHeight="130.0" prefWidth="144.0" text="ADD">
+            <Button fx:id="Disaster1" layoutX="8.0" layoutY="107.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="130.0" prefWidth="144.0" text="ADD">
                <font>
                   <Font name="NATS" size="35.0" />
                </font>
             </Button>
-            <Button fx:id="Disaster2" layoutX="161.0" layoutY="108.0" mnemonicParsing="false" onAction="#switchtoPrevDisaster" prefHeight="129.0" prefWidth="147.0" text="ADD">
+            <Button fx:id="Disaster2" layoutX="161.0" layoutY="108.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="129.0" prefWidth="147.0" text="ADD">
                <font>
                   <Font name="NATS" size="35.0" />
                </font>
             </Button>
-            <Button fx:id="Disaster3" layoutX="317.0" layoutY="108.0" mnemonicParsing="false" onAction="#switchtoNewDisaster" prefHeight="129.0" prefWidth="159.0" text="ADD">
+            <Button fx:id="Disaster3" layoutX="317.0" layoutY="108.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="129.0" prefWidth="159.0" text="ADD">
                <font>
                   <Font name="NATS" size="35.0" />
                </font>
             </Button>
-            <Button fx:id="Disaster4" layoutX="482.0" layoutY="109.0" mnemonicParsing="false" onAction="#switchtoNewDisaster" prefHeight="128.0" prefWidth="151.0" text="ADD">
+            <Button fx:id="Disaster4" layoutX="482.0" layoutY="109.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="128.0" prefWidth="151.0" text="ADD">
                <font>
                   <Font name="NATS" size="35.0" />
                </font>
             </Button>
-            <Button fx:id="Disaster5" layoutX="637.0" layoutY="109.0" mnemonicParsing="false" onAction="#switchtoNewDisaster" prefHeight="128.0" prefWidth="153.0" text="ADD">
+            <Button fx:id="Disaster5" layoutX="637.0" layoutY="109.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="128.0" prefWidth="153.0" text="ADD">
                <font>
                   <Font name="NATS" size="35.0" />
                </font>
@@ -74,27 +74,27 @@
                   <Font name="NATS" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="erase1" layoutX="48.0" layoutY="296.0" mnemonicParsing="false" text="Erase">
+            <Button fx:id="erase1" layoutX="48.0" layoutY="296.0" mnemonicParsing="false" onAction="#erase" text="Erase">
                <font>
                   <Font name="NATS" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="erase2" layoutX="202.0" layoutY="296.0" mnemonicParsing="false" text="Erase">
+            <Button fx:id="erase2" layoutX="202.0" layoutY="296.0" mnemonicParsing="false" onAction="#erase" text="Erase">
                <font>
                   <Font name="NATS" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="erase3" layoutX="364.0" layoutY="296.0" mnemonicParsing="false" text="Erase">
+            <Button fx:id="erase3" layoutX="364.0" layoutY="296.0" mnemonicParsing="false" onAction="#erase" text="Erase">
                <font>
                   <Font name="NATS" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="erase4" layoutX="525.0" layoutY="296.0" mnemonicParsing="false" text="Erase">
+            <Button fx:id="erase4" layoutX="525.0" layoutY="296.0" mnemonicParsing="false" onAction="#erase" text="Erase">
                <font>
                   <Font name="NATS" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="erase5" layoutX="681.0" layoutY="296.0" mnemonicParsing="false" text="Erase">
+            <Button fx:id="erase5" layoutX="681.0" layoutY="296.0" mnemonicParsing="false" onAction="#erase" text="Erase">
                <font>
                   <Font name="NATS" size="20.0" />
                </font>

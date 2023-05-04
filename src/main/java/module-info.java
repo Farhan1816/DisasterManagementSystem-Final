@@ -6,6 +6,7 @@ module com.example.disastermanagementsystemfinal {
     requires com.dlsc.formsfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
 
     opens com.example.disastermanagementsystemfinal to javafx.fxml;
     exports com.example.disastermanagementsystemfinal;
