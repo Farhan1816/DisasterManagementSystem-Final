@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.disastermanagementsystemfinal.supportDetailsController">
+   <children>
+      <TableView fx:id="DoctorTable" layoutX="28.0" layoutY="25.0" prefHeight="313.0" prefWidth="225.0">
+        <columns>
+          <TableColumn fx:id="doctorFirstNameTableColumn" prefWidth="111.33331298828125" text="First Name" />
+          <TableColumn fx:id="doctorLastNameTableColumn" prefWidth="113.33334350585938" text="Last Name" />
+        </columns>
+      </TableView>
+      <TableView fx:id="WorkerTable" layoutX="293.0" layoutY="25.0" prefHeight="313.0" prefWidth="251.0">
+        <columns>
+          <TableColumn fx:id="workerFirstNameTableColumn" prefWidth="126.66668701171875" text="First Name" />
+          <TableColumn fx:id="workerLastNameTableColumn" prefWidth="123.33331298828125" text="Last Name" />
+        </columns>
+      </TableView>
+      <Label layoutX="105.0" layoutY="338.0" text="Total Doctor" />
+      <Label layoutX="405.0" layoutY="338.0" text="Total Worker" />
+      <Label fx:id="doctorLabel" layoutX="124.0" layoutY="369.0" text="00" />
+      <Label fx:id="workerLabel" layoutX="425.0" layoutY="361.0" text="00" />
+      <Label layoutX="91.0" layoutY="5.0" prefHeight="17.0" prefWidth="113.0" text="Doctors List " />
+      <Label layoutX="336.0" layoutY="5.0" prefHeight="17.0" prefWidth="134.0" text="Relief Worker List" />
+      <Button fx:id="ReturnButton" layoutX="548.0" layoutY="1.0" mnemonicParsing="false" onAction="#returnToSupport" text="Return" />
+   </children>
+</AnchorPane>
