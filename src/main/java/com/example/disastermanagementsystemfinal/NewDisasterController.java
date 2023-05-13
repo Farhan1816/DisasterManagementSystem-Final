@@ -75,6 +75,7 @@ public class NewDisasterController implements Initializable {
     {
         GetValues();
         SetValues();
+        back(event);
     }
 
     public void GetValues()

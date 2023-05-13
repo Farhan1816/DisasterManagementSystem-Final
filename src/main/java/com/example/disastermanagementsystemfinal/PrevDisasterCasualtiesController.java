@@ -185,4 +185,34 @@ public class PrevDisasterCasualtiesController implements Initializable {
         }
 
     }
+
+    public void logout(ActionEvent e)
+    {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Scene scene = new Scene((root));
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception i)
+        {
+            i.printStackTrace();
+        }
+    }
+
+    public void back(ActionEvent e)
+    {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("Victim.fxml"));
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Scene scene = new Scene((root));
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception i)
+        {
+            i.printStackTrace();
+        }
+    }
 }

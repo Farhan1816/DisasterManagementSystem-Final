@@ -2,10 +2,15 @@ package com.example.disastermanagementsystemfinal;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.*;
@@ -13,6 +18,9 @@ import java.util.ResourceBundle;
 
 public class AddInjured implements Initializable {
 
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
     public static int option=0;
     public AddInjured(int val)
     {
@@ -114,6 +122,7 @@ public class AddInjured implements Initializable {
         {
             getValue();
             SetValues();
+            back(e);
         }
         catch (Exception i)
         {
@@ -125,5 +134,20 @@ public class AddInjured implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Hospital.getItems().add("N/A");
         Hospital.setEditable(true);
+    }
+
+    public void back(ActionEvent e)
+    {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("DisasterCasualties.fxml"));
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Scene scene = new Scene((root));
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception i)
+        {
+            i.printStackTrace();
+        }
     }
 }
