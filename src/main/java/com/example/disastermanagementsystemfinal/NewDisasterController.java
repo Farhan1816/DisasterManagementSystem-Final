@@ -22,7 +22,9 @@ import java.sql.*;
 
 public class NewDisasterController implements Initializable {
 
-
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     public int option = 0;
 
@@ -85,6 +87,35 @@ public class NewDisasterController implements Initializable {
         intensity=Intensity.getValue();
         injured=0;
         death=0;
+    }
+    public void logout(ActionEvent e)
+    {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Scene scene = new Scene((root));
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception i)
+        {
+            i.printStackTrace();
+        }
+    }
+
+    public void back(ActionEvent e)
+    {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("disaster.fxml"));
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Scene scene = new Scene((root));
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception i)
+        {
+            i.printStackTrace();
+        }
     }
 
     public void SetValues()

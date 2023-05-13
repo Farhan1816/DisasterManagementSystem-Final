@@ -26,7 +26,7 @@ public class DisasterController implements Initializable {
     private  int arr[]= new int[10];
 
     @FXML
-    private Button Disaster1, Disaster2, Disaster3, Disaster4, Disaster5, erase1, erase2, erase3, erase4, erase5;
+    private Button Disaster1, Disaster2, Disaster3, Disaster4, Disaster5, erase1, erase2, erase3, erase4, erase5, backButton, logoutButton;
 
     public void switchtoNewDisaster(ActionEvent event, int option) throws IOException
     {
@@ -277,5 +277,36 @@ public class DisasterController implements Initializable {
 
 
     }
+
+    public void logout(ActionEvent e)
+    {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Scene scene = new Scene((root));
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception i)
+        {
+            i.printStackTrace();
+        }
+    }
+
+    public void back(ActionEvent e)
+    {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Scene scene = new Scene((root));
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception i)
+        {
+            i.printStackTrace();
+        }
+    }
+
 
 }
