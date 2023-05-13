@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.disastermanagementsystemfinal.VictimController">
    <top>
       <HBox alignment="TOP_CENTER" prefHeight="82.0" prefWidth="800.0" style="-fx-background-color: #36FAFA;" BorderPane.alignment="CENTER">
          <children>
@@ -24,27 +23,27 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="disaster1" layoutX="28.0" layoutY="195.0" mnemonicParsing="false" prefHeight="121.0" prefWidth="140.0" text="Disaster1">
+            <Button fx:id="Disaster1" layoutX="28.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster1">
                <font>
                   <Font name="Mallanna" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="disaster2" layoutX="181.0" layoutY="195.0" mnemonicParsing="false" prefHeight="121.0" prefWidth="140.0" text="Disaster2">
+            <Button fx:id="Disaster2" layoutX="181.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster2">
                <font>
                   <Font name="Mallanna" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="disaster3" layoutX="334.0" layoutY="195.0" mnemonicParsing="false" prefHeight="121.0" prefWidth="140.0" text="Disaster3">
+            <Button fx:id="Disaster3" layoutX="334.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster3">
                <font>
                   <Font name="Mallanna" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="disaster4" layoutX="488.0" layoutY="195.0" mnemonicParsing="false" prefHeight="121.0" prefWidth="140.0" text="Disaster4">
+            <Button fx:id="Disaster4" layoutX="488.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster4">
                <font>
                   <Font name="Mallanna" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="disaster5" layoutX="640.0" layoutY="195.0" mnemonicParsing="false" prefHeight="121.0" prefWidth="140.0" text="Disaster5">
+            <Button fx:id="Disaster5" layoutX="640.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster5">
                <font>
                   <Font name="Mallanna" size="28.0" />
                </font>

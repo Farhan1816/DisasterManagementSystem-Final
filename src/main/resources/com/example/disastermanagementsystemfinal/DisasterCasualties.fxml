@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox alignment="TOP_CENTER" prefHeight="83.0" prefWidth="800.0" style="-fx-background-color: #36FAFA;" BorderPane.alignment="CENTER">
@@ -86,67 +85,67 @@
                   <Font name="Mallanna" size="25.0" />
                </font>
             </Label>
-            <TextField layoutX="218.0" layoutY="18.0" prefHeight="59.0" prefWidth="210.0">
+            <TextField fx:id="Death" layoutX="218.0" layoutY="18.0" prefHeight="59.0" prefWidth="210.0">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </TextField>
-            <Button layoutX="482.0" layoutY="18.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Add">
+            <Button fx:id="AddDeath" layoutX="482.0" layoutY="18.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Add">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </Button>
-            <Button layoutX="635.0" layoutY="18.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Info">
+            <Button fx:id="InfoDeath" layoutX="635.0" layoutY="18.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Info">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </Button>
-            <TextField layoutX="218.0" layoutY="108.0" prefHeight="59.0" prefWidth="210.0">
+            <TextField fx:id="Injured" layoutX="218.0" layoutY="108.0" prefHeight="59.0" prefWidth="210.0">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </TextField>
-            <Button layoutX="482.0" layoutY="108.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Add">
+            <Button fx:id="AddInjured" layoutX="482.0" layoutY="108.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Add">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </Button>
-            <Button layoutX="635.0" layoutY="108.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Info">
+            <Button fx:id="InfoInjured" layoutX="635.0" layoutY="108.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Info">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </Button>
-            <TextField layoutX="218.0" layoutY="194.0" prefHeight="59.0" prefWidth="210.0">
+            <TextField fx:id="Hospitalised" layoutX="218.0" layoutY="194.0" prefHeight="59.0" prefWidth="210.0">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </TextField>
-            <Button layoutX="482.0" layoutY="194.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Add">
+            <Button fx:id="AddHospitalised" layoutX="482.0" layoutY="194.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Add">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </Button>
-            <Button layoutX="635.0" layoutY="194.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Info">
+            <Button fx:id="InfoHospitalised" layoutX="635.0" layoutY="194.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Info">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </Button>
-            <TextField layoutX="218.0" layoutY="292.0" prefHeight="59.0" prefWidth="210.0">
+            <TextField fx:id="ResidenceDestroyed" layoutX="218.0" layoutY="292.0" prefHeight="59.0" prefWidth="210.0">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </TextField>
-            <Button layoutX="482.0" layoutY="292.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Edit">
+            <Button fx:id="EditResidenceDestroyed" layoutX="482.0" layoutY="292.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Edit">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </Button>
-            <TextField layoutX="218.0" layoutY="386.0" prefHeight="59.0" prefWidth="210.0">
+            <TextField fx:id="Loss" layoutX="218.0" layoutY="386.0" prefHeight="59.0" prefWidth="210.0">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </TextField>
-            <Button layoutX="482.0" layoutY="386.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Edit">
+            <Button fx:id="EditEconomicLoss" layoutX="482.0" layoutY="386.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Edit">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
