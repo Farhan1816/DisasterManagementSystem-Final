@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,11 +26,16 @@ public class PrevDisasterCasualtiesController implements Initializable {
     private Parent root;
 
     @FXML
-    private Label Death, Injured, Hospitalised, ResidenceDestroyed, Loss;
+    private Label Death, Injured, Hospitalised;
 
     private int death, injured, hospitalised, residenceDestroyed, loss;
 
-    private Button AddDeath, InfoDeath, AddInjured, InfoInjured, AddHospitalised, InfoHospitalised, EditResidenceDestroyed, EditEconomicLoss;
+    @FXML
+    private Button AddDeath, InfoDeath, AddInjured, InfoInjured, AddHospitalised, InfoHospitalised, EnterResidence, EnterLoss;
+
+    @FXML
+    private TextField EconomicLoss, ResidenceDestroyed;
+
 
     public PrevDisasterCasualtiesController(int val)
     {
@@ -59,6 +65,73 @@ public class PrevDisasterCasualtiesController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void enterResidence(ActionEvent e) {
+        String val = ResidenceDestroyed.getText();
+        Connection connection = null;
+        PreparedStatement psInsert = null;
+        PreparedStatement psCheck = null;
+        ResultSet resultSet = null;
+        try {
+            if (option == 1)
+                connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster1", "farhan", "henloworld");
+            else if (option == 2)
+                connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster2", "farhan", "henloworld");
+            else if (option == 3)
+                connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster3", "farhan", "henloworld");
+            else if (option == 4)
+                connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster4", "farhan", "henloworld");
+            else if (option == 5)
+                connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster5", "farhan", "henloworld");
+
+            psInsert = connection.prepareStatement("set sql_safe_updates=0;");
+            psInsert.executeUpdate();
+            psInsert = connection.prepareStatement("update casualties set ResidenceDestroyed=?;");
+            psInsert.setInt(1, Integer.valueOf(val));
+            psInsert.executeUpdate();
+
+        }
+        catch (SQLException i)
+        {
+            i.printStackTrace();
+        }
+
+        residenceDestroyed = Integer.valueOf(val);
+        ResidenceDestroyed.setText(val);
+    }
+
+    public void enterLoss(ActionEvent e) {
+        String val = EconomicLoss.getText();
+        Connection connection = null;
+        PreparedStatement psInsert = null;
+        PreparedStatement psCheck = null;
+        ResultSet resultSet = null;
+        try {
+            if (option == 1)
+                connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster1", "farhan", "henloworld");
+            else if (option == 2)
+                connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster2", "farhan", "henloworld");
+            else if (option == 3)
+                connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster3", "farhan", "henloworld");
+            else if (option == 4)
+                connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster4", "farhan", "henloworld");
+            else if (option == 5)
+                connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster5", "farhan", "henloworld");
+
+            psInsert = connection.prepareStatement("set sql_safe_updates=0;");
+            psInsert.executeUpdate();
+            psInsert = connection.prepareStatement("update casualties set Loss=?;");
+            psInsert.setInt(1, Integer.valueOf(val));
+            psInsert.executeUpdate();
+        }
+        catch (SQLException i)
+        {
+            i.printStackTrace();
+        }
+
+        loss = Integer.valueOf(val);
+        EconomicLoss.setText(val);
     }
 
     public PrevDisasterCasualtiesController()
@@ -96,9 +169,11 @@ public class PrevDisasterCasualtiesController implements Initializable {
                 hospitalised = resultSet.getInt(3);
                 Hospitalised.setText(Integer.toString(hospitalised));
                 residenceDestroyed = resultSet.getInt(4);
+                System.out.println(residenceDestroyed);
                 ResidenceDestroyed.setText(Integer.toString(residenceDestroyed));
                 loss = resultSet.getInt(5);
-                Loss.setText(Integer.toString(loss));
+                System.out.println(loss);
+                EconomicLoss.setText(Integer.toString(loss));
             }
 
             //System.out.println(option + " " + death + " " + injured+ " " + hospitalised+ " " +residenceDestroyed+" "+loss);

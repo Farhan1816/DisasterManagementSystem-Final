@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="305.0" prefWidth="516.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.disastermanagementsystemfinal.PrevDisasterCasualtiesController">
+   <children>
+      <Label layoutX="28.0" layoutY="60.0" prefHeight="77.0" prefWidth="143.0" text="Approximate ">
+         <font>
+            <Font name="Mallanna" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="107.0" prefHeight="70.0" prefWidth="135.0" text="(In USD)">
+         <font>
+            <Font name="Mallanna" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="164.0" layoutY="98.0" prefHeight="41.0" prefWidth="14.0" text=":">
+         <font>
+            <Font name="Mallanna" size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TotalLoss" layoutX="180.0" layoutY="93.0" prefHeight="59.0" prefWidth="306.0">
+         <font>
+            <Font name="Mallanna" size="25.0" />
+         </font>
+      </TextField>
+      <Button fx:id="EnterLoss" layoutX="167.0" layoutY="188.0" mnemonicParsing="false" onAction="#EconomicLossEnter" prefHeight="52.0" prefWidth="162.0" text="Enter">
+         <font>
+            <Font name="Mallanna" size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
