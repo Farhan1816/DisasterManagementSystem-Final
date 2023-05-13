@@ -51,8 +51,7 @@ public class LoginController{
         user=username.getText();
         pass=password.getText();
 
-        if((user.compareTo("abcd")==0) && (pass.compareTo("abcd")==0))
-        {
+        if((user.compareTo("abcd")==0) && (pass.compareTo("abcd")==0)){
             switchToMenu(event);
         }
 
