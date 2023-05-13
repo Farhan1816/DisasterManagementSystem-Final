@@ -11,11 +11,15 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException{
-
-            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-            Scene scene = new Scene((root));
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Support.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.show();
+        } catch(Exception e){
+            System.out.println("File could not be loaded");
+            e.printStackTrace();
+        }
     }
 
 
