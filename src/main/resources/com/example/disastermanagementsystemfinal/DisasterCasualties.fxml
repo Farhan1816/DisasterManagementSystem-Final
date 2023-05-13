@@ -84,7 +84,7 @@
                   <Font name="Mallanna" size="25.0" />
                </font>
             </Label>
-            <Button fx:id="AddDeath" layoutX="482.0" layoutY="18.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Add">
+            <Button fx:id="AddDeath" layoutX="482.0" layoutY="18.0" mnemonicParsing="false" onAction="#addDeath" prefHeight="61.0" prefWidth="125.0" text="Add">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
@@ -94,22 +94,12 @@
                   <Font name="Mallanna" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="AddInjured" layoutX="482.0" layoutY="108.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Add">
+            <Button fx:id="AddInjured" layoutX="482.0" layoutY="108.0" mnemonicParsing="false" onAction="#addInjured" prefHeight="61.0" prefWidth="125.0" text="Add">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>
             </Button>
             <Button fx:id="InfoInjured" layoutX="635.0" layoutY="108.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Info">
-               <font>
-                  <Font name="Mallanna" size="25.0" />
-               </font>
-            </Button>
-            <Button fx:id="AddHospitalised" layoutX="482.0" layoutY="194.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Add">
-               <font>
-                  <Font name="Mallanna" size="25.0" />
-               </font>
-            </Button>
-            <Button fx:id="InfoHospitalised" layoutX="635.0" layoutY="194.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="125.0" text="Info">
                <font>
                   <Font name="Mallanna" size="25.0" />
                </font>

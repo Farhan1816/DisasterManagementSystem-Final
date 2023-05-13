@@ -2,24 +2,20 @@ package com.example.disastermanagementsystemfinal;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-import java.net.URL;
 import java.sql.*;
-import java.util.ResourceBundle;
 
-public class AddInjured implements Initializable {
+public class AddDeath {
 
     public static int option=0;
-    public AddInjured(int val)
+    public AddDeath(int val)
     {
         option=val;
     }
 
-    public AddInjured()
+    public AddDeath()
     {
 
     }
@@ -30,17 +26,12 @@ public class AddInjured implements Initializable {
     }
 
     @FXML
-    TextField Name, Contact, Email, Address, Gender, Age, InjuryDetails, ShelterNo, DoctorID;
+    TextField Name, Contact, Email, Address, Gender, Age, DeathCause, ShelterNo, DoctorID;
     @FXML
     Button Enter;
-    @FXML
-    ComboBox<String>Hospital;
 
+    String name, contact, email, address, gender, age, death, shelterNo, doctor, hospital;
 
-
-    String name, contact, email, address, gender, age, injury, shelterNo, doctor, hospital;
-
-    InjuredOrSick newInjured;
 
     void getValue()
     {
@@ -50,13 +41,10 @@ public class AddInjured implements Initializable {
         address = Address.getText();
         gender = Gender.getText();
         age = Age.getText();
-        injury = InjuryDetails.getText();
+        death = DeathCause.getText();
         shelterNo= ShelterNo.getText();
         doctor=DoctorID.getText();
-        hospital=Hospital.getValue();
-        if(!Hospital.getItems().contains(hospital)){
-            Hospital.getItems().add(hospital);
-        }
+
     }
 
     public void SetValues()
@@ -86,17 +74,17 @@ public class AddInjured implements Initializable {
             }
             psInsert = connection1.prepareStatement("set sql_safe_updates=0;");
             psInsert.executeUpdate();
-            psInsert = connection1.prepareStatement("insert into injured(NameInj, Contact, Email, Address, Gender, Age, Injury, shelterNo, doctorID, HospitalName) values(?,?,?,?,?,?,?,?,?,?)");
+            psInsert = connection1.prepareStatement("insert into death(Namedth, Contact, Email, Address, Gender, Age, Death , ShelterNo, DoctorID) values(?,?,?,?,?,?,?,?,?)");
             psInsert.setString(1, name);
             psInsert.setString(2, contact);
             psInsert.setString(3, email);
             psInsert.setString(4, address);
             psInsert.setString(5, gender);
             psInsert.setString(6, age);
-            psInsert.setString(7, injury);
+            psInsert.setString(7, death);
             psInsert.setString(8, shelterNo);
             psInsert.setString(9, doctor);
-            psInsert.setString(10, hospital);
+
             psInsert.executeUpdate();
         }
 
@@ -121,9 +109,4 @@ public class AddInjured implements Initializable {
         }
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Hospital.getItems().add("N/A");
-        Hospital.setEditable(true);
-    }
 }
