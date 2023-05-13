@@ -15,6 +15,7 @@ public class PrevDisasterCasualtiesController implements Initializable {
 
     @FXML
     private Label Death, Injured, Hospitalised, ResidenceDestroyed, Loss;
+
     private int death, injured, hospitalised, residenceDestroyed, loss;
 
     private Button AddDeath, InfoDeath, AddInjured, InfoInjured, AddHospitalised, InfoHospitalised, EditResidenceDestroyed, EditEconomicLoss;
@@ -22,6 +23,7 @@ public class PrevDisasterCasualtiesController implements Initializable {
     public PrevDisasterCasualtiesController(int val)
     {
         option = val;
+        //System.out.println(option);
     }
 
     public PrevDisasterCasualtiesController()
@@ -31,6 +33,8 @@ public class PrevDisasterCasualtiesController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        System.out.println(option);
 
         Connection connection = null;
         PreparedStatement psInsert = null;
@@ -61,6 +65,8 @@ public class PrevDisasterCasualtiesController implements Initializable {
                 loss = resultSet.getInt(5);
                 Loss.setText(Integer.toString(loss));
             }
+
+            //System.out.println(option + " " + death + " " + injured+ " " + hospitalised+ " " +residenceDestroyed+" "+loss);
 
         }
         catch (SQLException e)
