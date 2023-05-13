@@ -6,26 +6,53 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.disastermanagementsystemfinal.supportDetailsController">
-   <children>
-      <TableView fx:id="DoctorTable" layoutX="28.0" layoutY="25.0" prefHeight="313.0" prefWidth="225.0">
-        <columns>
-          <TableColumn fx:id="doctorFirstNameTableColumn" prefWidth="111.33331298828125" text="First Name" />
-          <TableColumn fx:id="doctorLastNameTableColumn" prefWidth="113.33334350585938" text="Last Name" />
-        </columns>
-      </TableView>
-      <TableView fx:id="WorkerTable" layoutX="293.0" layoutY="25.0" prefHeight="313.0" prefWidth="251.0">
-        <columns>
-          <TableColumn fx:id="workerFirstNameTableColumn" prefWidth="126.66668701171875" text="First Name" />
-          <TableColumn fx:id="workerLastNameTableColumn" prefWidth="123.33331298828125" text="Last Name" />
-        </columns>
-      </TableView>
-      <Label layoutX="105.0" layoutY="338.0" text="Total Doctor" />
-      <Label layoutX="405.0" layoutY="338.0" text="Total Worker" />
-      <Label fx:id="doctorLabel" layoutX="124.0" layoutY="369.0" text="00" />
-      <Label fx:id="workerLabel" layoutX="425.0" layoutY="361.0" text="00" />
-      <Label layoutX="91.0" layoutY="5.0" prefHeight="17.0" prefWidth="113.0" text="Doctors List " />
-      <Label layoutX="336.0" layoutY="5.0" prefHeight="17.0" prefWidth="134.0" text="Relief Worker List" />
-      <Button fx:id="ReturnButton" layoutX="548.0" layoutY="1.0" mnemonicParsing="false" onAction="#returnToSupport" text="Return" />
-   </children>
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.disastermanagementsystemfinal.supportDetailsController">
+    <children>
+        <TableView fx:id="DoctorTable" layoutX="28.0" layoutY="25.0" prefHeight="577.0" prefWidth="195.0">
+            <columns>
+                <TableColumn fx:id="doctorFirstNameTableColumn" prefWidth="84.0" text="First Name" />
+                <TableColumn fx:id="doctorLastNameTableColumn" prefWidth="142.0" text="Last Name" />
+            </columns>
+        </TableView>
+        <TableView fx:id="WorkerTable" layoutX="250.0" layoutY="31.0" prefHeight="575.0" prefWidth="219.0">
+            <columns>
+                <TableColumn fx:id="workerFirstNameTableColumn" prefWidth="105.0" text="First Name" />
+                <TableColumn fx:id="workerLastNameTableColumn" prefWidth="146.0" text="Last Name" />
+            </columns>
+        </TableView>
+        <Label layoutX="100.0" layoutY="613.0" text="Total Doctor" />
+        <Label layoutX="274.0" layoutY="611.0" text="Total Worker" />
+        <Label fx:id="doctorLabel" layoutX="131.0" layoutY="637.0" text="00" />
+        <Label fx:id="workerLabel" layoutX="300.0" layoutY="637.0" text="00" />
+        <Label layoutX="91.0" layoutY="5.0" prefHeight="17.0" prefWidth="113.0" text="Doctors List " />
+        <Label layoutX="336.0" layoutY="5.0" prefHeight="17.0" prefWidth="134.0" text="Relief Worker List" />
+        <Button fx:id="ReturnButton" layoutX="1214.0" layoutY="12.0" mnemonicParsing="false" onAction="#returnToSupport" text="Return" />
+        <TableView fx:id="victimTable" layoutX="501.0" layoutY="39.0" prefHeight="566.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="victimFirstNameTableColumn" prefWidth="99.0" text="First Name" />
+                <TableColumn fx:id="victimLastNameTableColumn" prefWidth="100.0" text="Last Name" />
+            </columns>
+        </TableView>
+        <TableView fx:id="officerTable" layoutX="724.0" layoutY="43.0" prefHeight="568.0" prefWidth="226.0">
+            <columns>
+                <TableColumn fx:id="officerFirstNameTableColumn" prefWidth="97.0" text="First Name" />
+                <TableColumn fx:id="officerLastNameTableColumn" prefWidth="123.0" text="Last Name " />
+            </columns>
+        </TableView>
+        <TableView fx:id="volunteerTable" layoutX="967.0" layoutY="42.0" prefHeight="564.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="volunteerFirstNameTableColumn" prefWidth="91.0" text="First Name" />
+                <TableColumn fx:id="volunteerLastNameTableColumn" prefWidth="108.0" text="Last Name" />
+            </columns>
+        </TableView>
+        <Label layoutX="574.0" layoutY="16.0" text="Victim" />
+        <Label layoutX="808.0" layoutY="17.0" text="Disaster Officer" />
+        <Label layoutX="1040.0" layoutY="23.0" text="Volunteer" />
+        <Label layoutX="560.0" layoutY="620.0" text="Total Victim" />
+        <Label layoutX="807.0" layoutY="620.0" text="Total Officer" />
+        <Label layoutX="1053.0" layoutY="613.0" text="Total Volunteer" />
+        <Label fx:id="totalVictim" layoutX="577.0" layoutY="646.0" text="00" />
+        <Label fx:id="totalOfficer" layoutX="807.0" layoutY="655.0" text="00" />
+        <Label fx:id="totalVolunteer" layoutX="1052.0" layoutY="655.0" text="00" />
+    </children>
 </AnchorPane>

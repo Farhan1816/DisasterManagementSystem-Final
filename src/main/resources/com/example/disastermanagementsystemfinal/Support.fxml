@@ -3,10 +3,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.disastermanagementsystemfinal.SupportController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.disastermanagementsystemfinal.SupportController">
    <children>
       <Button fx:id="ReturnButton" layoutX="528.0" layoutY="21.0" mnemonicParsing="false" onAction="#returnToMenu" text="Return" />
-      <Button fx:id="disasterButton1" layoutX="30.0" layoutY="148.0" mnemonicParsing="false" onAction="#Button1" text="Disaster 1" />
+      <Button fx:id="disasterButton1" layoutX="30.0" layoutY="92.0" mnemonicParsing="false" onAction="#Button1" prefHeight="81.0" prefWidth="68.0" text="Disaster 1" />
       <Button fx:id="disasterButton2" layoutX="145.0" layoutY="148.0" mnemonicParsing="false" onAction="#Button2" text="Disaster 2" />
       <Button fx:id="disasterButton3" layoutX="249.0" layoutY="149.0" mnemonicParsing="false" onAction="#Button3" text="Disaster 3" />
       <Button fx:id="disasterButton4" layoutX="353.0" layoutY="150.0" mnemonicParsing="false" onAction="#Button4" text="Disaster 4" />
