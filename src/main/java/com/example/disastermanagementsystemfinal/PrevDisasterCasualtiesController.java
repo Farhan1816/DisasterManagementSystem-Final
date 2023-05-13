@@ -31,10 +31,100 @@ public class PrevDisasterCasualtiesController implements Initializable {
     private int death, injured, hospitalised, residenceDestroyed, loss;
 
     @FXML
-    private Button AddDeath, InfoDeath, AddInjured, InfoInjured, AddHospitalised, InfoHospitalised, EnterResidence, EnterLoss;
+    private Button AddDeath, InfoDeath, AddInjured, InfoInjured, EnterResidence, EnterLoss;
 
     @FXML
     private TextField EconomicLoss, ResidenceDestroyed;
+
+    public void infoDeath(ActionEvent event) throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("DeathInfo.fxml"));
+
+        if(option==1)
+        {
+            DeathInfoController deathInfo = new DeathInfoController(1);
+            loader.setController(null);
+            loader.setLocation(getClass().getResource("DeathInfo.fxml"));
+            //prevDisasterController.initData(1);
+        }
+        else if(option==2)
+        {
+            DeathInfoController deathInfo = new DeathInfoController(2);
+            loader.setController(null);
+            loader.setLocation(getClass().getResource("DeathInfo.fxml"));
+            //prevDisasterController.initData(2);
+        }
+        else if(option==3)
+        {
+            DeathInfoController deathInfo = new DeathInfoController(3);
+            loader.setController(null);
+            loader.setLocation(getClass().getResource("DeathInfo.fxml"));
+            //prevDisasterController.initData(3);
+        }
+        else if(option==4)
+        {
+            DeathInfoController deathInfo = new DeathInfoController(4);
+            loader.setController(null);
+            loader.setLocation(getClass().getResource("DeathInfo.fxml"));
+            //prevDisasterController.initData(4);
+        }
+        else {
+            DeathInfoController deathInfo = new DeathInfoController(5);
+            loader.setController(null);
+            loader.setLocation(getClass().getResource("DeathInfo.fxml"));
+            //prevDisasterController.initData(5);
+        }
+        Parent root = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void infoInjured(ActionEvent event) throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("InjuredInfo.fxml"));
+
+        if(option==1)
+        {
+            InjuredInfoController deathInfo = new InjuredInfoController(1);
+            loader.setController(null);
+            loader.setLocation(getClass().getResource("InjuredInfo.fxml"));
+            //prevDisasterController.initData(1);
+        }
+        else if(option==2)
+        {
+            InjuredInfoController deathInfo = new InjuredInfoController(2);
+            loader.setController(null);
+            loader.setLocation(getClass().getResource("InjuredInfo.fxml"));
+            //prevDisasterController.initData(2);
+        }
+        else if(option==3)
+        {
+            InjuredInfoController deathInfo = new InjuredInfoController(3);
+            loader.setController(null);
+            loader.setLocation(getClass().getResource("InjuredInfo.fxml"));
+            //prevDisasterController.initData(3);
+        }
+        else if(option==4)
+        {
+            InjuredInfoController deathInfo = new InjuredInfoController(4);
+            loader.setController(null);
+            loader.setLocation(getClass().getResource("InjuredInfo.fxml"));
+            //prevDisasterController.initData(4);
+        }
+        else {
+            InjuredInfoController deathInfo = new InjuredInfoController(5);
+            loader.setController(null);
+            loader.setLocation(getClass().getResource("InjuredInfo.fxml"));
+            //prevDisasterController.initData(5);
+        }
+        Parent root = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
     public PrevDisasterCasualtiesController(int val)
