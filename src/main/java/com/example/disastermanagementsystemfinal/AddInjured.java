@@ -115,6 +115,69 @@ public class AddInjured implements Initializable {
 
     }
 
+    public void update()
+    {
+        Connection connection1 = null, connection2=null;
+        PreparedStatement psInsert = null;
+        PreparedStatement psCheck = null;
+        ResultSet resultSet = null;
+
+        try {
+            if (option == 1) {
+                connection1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster1", "farhan", "henloworld");
+            } else if (option == 2) {
+                connection1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster2", "farhan", "henloworld");
+            } else if (option == 3) {
+                connection1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster3", "farhan", "henloworld");
+            } else if (option == 4) {
+                connection1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster4", "farhan", "henloworld");
+            } else if (option == 5) {
+                connection1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster5", "farhan", "henloworld");
+            }
+
+            psInsert = connection1.prepareStatement("set sql_safe_updates=0");
+            psInsert.executeUpdate();
+            Statement stmt = connection1.createStatement();
+            String sql = "select * from casualties limit 1";
+            ResultSet rs =stmt.executeQuery(sql);
+            int injuredValue=0;
+            int hospitalisedValue=0;
+            if(rs.next())
+            {
+                injuredValue = rs.getInt("Injured");
+                hospitalisedValue=rs.getInt("Hospitalised");
+            }
+
+            injuredValue++;
+            String na="N/A";
+            if(!hospital.equals(na))
+            {
+                hospitalisedValue++;
+            }
+
+            System.out.println(hospital);
+            System.out.println(na);
+            //System.out.println(injuredValue);
+            psInsert = connection1.prepareStatement("update casualties set Injured=? where 1=1");
+            psInsert.setInt(1, injuredValue);
+            psInsert.executeUpdate();
+            psInsert = connection1.prepareStatement("update casualties set Hospitalised=? where 1=1");
+            psInsert.setInt(1, hospitalisedValue);
+            psInsert.executeUpdate();
+            psInsert = connection1.prepareStatement("update disaster set injured=? where 1=1");
+            psInsert.setInt(1, injuredValue);
+            psInsert.executeUpdate();
+            psInsert = connection1.prepareStatement("update disaster set hospitalised=? where 1=1");
+            psInsert.setInt(1, hospitalisedValue);
+            psInsert.executeUpdate();
+        }
+
+        catch(SQLException i)
+        {
+            i.printStackTrace();
+        }
+    }
+
     public void confirmed(ActionEvent e)
     {
         System.out.println(option);
@@ -122,6 +185,7 @@ public class AddInjured implements Initializable {
         {
             getValue();
             SetValues();
+            update();
             back(e);
         }
         catch (Exception i)

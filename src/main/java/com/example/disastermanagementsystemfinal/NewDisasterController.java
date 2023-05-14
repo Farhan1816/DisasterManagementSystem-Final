@@ -61,6 +61,7 @@ public class NewDisasterController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         DisasterType.getItems().addAll(disasters);
         Intensity.getItems().addAll(intensitys);
         District.getItems().addAll(districts);
@@ -76,6 +77,7 @@ public class NewDisasterController implements Initializable {
         GetValues();
         SetValues();
         back(event);
+        reset();
     }
 
     public void GetValues()
@@ -186,6 +188,50 @@ public class NewDisasterController implements Initializable {
             e.printStackTrace();
         }
 
+
+
+    }
+
+    public void reset()
+    {
+        System.out.println(option);
+        Connection connection1 = null, connection2=null;
+        PreparedStatement psInsert = null;
+        PreparedStatement psCheck = null;
+        ResultSet resultSet = null;
+
+        try {
+            if(option==1) {
+                connection1= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster1", "farhan","henloworld");
+            }
+            else if(option==2){
+                connection1= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster2", "farhan","henloworld");
+            }
+            else if(option==3){
+                connection1= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster3", "farhan","henloworld");
+            }
+            else if(option==4){
+                connection1= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster4", "farhan","henloworld");
+            }
+            else{
+                connection1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster5", "farhan","henloworld");
+            }
+            psInsert = connection1.prepareStatement("set sql_safe_updates=0;");
+            psInsert.executeUpdate();
+            psInsert = connection1.prepareStatement("delete from death");
+            psInsert.executeUpdate();
+            psInsert = connection1.prepareStatement("delete from injured");
+            psInsert.executeUpdate();
+            psInsert = connection1.prepareStatement("delete from casualties");
+            psInsert.executeUpdate();
+            psInsert = connection1.prepareStatement("insert into casualties(Deaths, Injured, Hospitalised, ResidenceDestroyed, Loss) values(0, 0, 0, 0, 0)");
+            psInsert.executeUpdate();
+        }
+
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
     }
 
 

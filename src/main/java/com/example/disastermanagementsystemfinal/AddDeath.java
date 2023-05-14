@@ -37,8 +37,7 @@ public class AddDeath {
     TextField Name, Contact, Email, Address, Gender, Age, DeathCause, ShelterNo, DoctorID;
     @FXML
     Button Enter;
-
-    String name, contact, email, address, gender, age, death, shelterNo, doctor, hospital;
+    String name, contact, email, address, gender, age, death, shelterNo, doctor;
 
 
     void getValue()
@@ -103,6 +102,53 @@ public class AddDeath {
 
     }
 
+    public void update()
+    {
+        Connection connection1 = null, connection2=null;
+        PreparedStatement psInsert = null;
+        PreparedStatement psCheck = null;
+        ResultSet resultSet = null;
+
+        try {
+            if (option == 1) {
+                connection1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster1", "farhan", "henloworld");
+            } else if (option == 2) {
+                connection1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster2", "farhan", "henloworld");
+            } else if (option == 3) {
+                connection1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster3", "farhan", "henloworld");
+            } else if (option == 4) {
+                connection1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster4", "farhan", "henloworld");
+            } else if (option == 5) {
+                connection1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Disaster5", "farhan", "henloworld");
+            }
+
+            psInsert = connection1.prepareStatement("set sql_safe_updates=0");
+            psInsert.executeUpdate();
+            Statement stmt = connection1.createStatement();
+            String sql = "select Deaths from casualties LIMIT 1";
+            ResultSet rs =stmt.executeQuery(sql);
+            int deathValue=0;
+            if(rs.next())
+            {
+                deathValue = rs.getInt(1);
+            }
+
+            deathValue++;
+            System.out.println(deathValue);
+            psInsert = connection1.prepareStatement("update casualties set Deaths=? where 1=1");
+            psInsert.setInt(1, deathValue);
+            psInsert.executeUpdate();
+            psInsert = connection1.prepareStatement("update disaster set death=? where 1=1");
+            psInsert.setInt(1, deathValue);
+            psInsert.executeUpdate();
+        }
+
+        catch(SQLException i)
+        {
+            i.printStackTrace();
+        }
+    }
+
     public void confirmed(ActionEvent e)
     {
         System.out.println(option);
@@ -110,6 +156,7 @@ public class AddDeath {
         {
             getValue();
             SetValues();
+            update();
             back(e);
         }
         catch (Exception i)

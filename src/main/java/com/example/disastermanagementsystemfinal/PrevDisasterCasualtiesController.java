@@ -147,6 +147,8 @@ public class PrevDisasterCasualtiesController implements Initializable {
 
     public void addDeath(ActionEvent event) throws IOException
     {
+
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AddDeathPopUp.fxml"));
         Parent root = loader.load();
         AddDeath addDeath= loader.getController();
@@ -159,6 +161,7 @@ public class PrevDisasterCasualtiesController implements Initializable {
 
     public void enterResidence(ActionEvent e) {
         String val = ResidenceDestroyed.getText();
+        residenceDestroyed=Integer.valueOf(val);
         Connection connection = null;
         PreparedStatement psInsert = null;
         PreparedStatement psCheck = null;
@@ -180,7 +183,9 @@ public class PrevDisasterCasualtiesController implements Initializable {
             psInsert = connection.prepareStatement("update casualties set ResidenceDestroyed=?;");
             psInsert.setInt(1, Integer.valueOf(val));
             psInsert.executeUpdate();
-
+            psInsert = connection.prepareStatement("update disaster set residenceDestroyed=?;");
+            psInsert.setInt(1, residenceDestroyed);
+            psInsert.executeUpdate();
         }
         catch (SQLException i)
         {
@@ -212,6 +217,9 @@ public class PrevDisasterCasualtiesController implements Initializable {
             psInsert = connection.prepareStatement("set sql_safe_updates=0;");
             psInsert.executeUpdate();
             psInsert = connection.prepareStatement("update casualties set Loss=?;");
+            psInsert.setInt(1, Integer.valueOf(val));
+            psInsert.executeUpdate();
+            psInsert = connection.prepareStatement("update disaster set economic_loss=?;");
             psInsert.setInt(1, Integer.valueOf(val));
             psInsert.executeUpdate();
         }
@@ -265,7 +273,6 @@ public class PrevDisasterCasualtiesController implements Initializable {
                 System.out.println(loss);
                 EconomicLoss.setText(Integer.toString(loss));
             }
-
             //System.out.println(option + " " + death + " " + injured+ " " + hospitalised+ " " +residenceDestroyed+" "+loss);
 
         }
