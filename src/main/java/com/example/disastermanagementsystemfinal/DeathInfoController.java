@@ -91,15 +91,7 @@ public class DeathInfoController extends Controller implements Initializable {
                 doctorID = rs.getString(9);
             }
 
-            prevDead.name = name;
-            prevDead.contact=contact;
-            prevDead.email=email;
-            prevDead.address=address;
-            prevDead.gender=gender;
-            prevDead.age=Integer.valueOf(age);
-            prevDead.deathCause=death;
-            prevDead.shelterNo=Integer.valueOf(shelterNo);
-            prevDead.treatedByPersonID = doctorID;
+            prevDead = new Dead(name,contact,email, address, gender, Integer.valueOf(age), Integer.valueOf(shelterNo),doctorID,death);
 
             Contact.setText(prevDead.contact);
             Email.setText(prevDead.email);

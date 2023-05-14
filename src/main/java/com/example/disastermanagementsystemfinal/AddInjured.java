@@ -61,6 +61,7 @@ public class AddInjured implements Initializable {
         injury = InjuryDetails.getText();
         shelterNo= ShelterNo.getText();
         doctor=DoctorID.getText();
+        System.out.println(doctor);
         hospital=Hospital.getValue();
         if(!Hospital.getItems().contains(hospital)){
             Hospital.getItems().add(hospital);
@@ -106,7 +107,7 @@ public class AddInjured implements Initializable {
             psInsert.setString(6, Integer.toString(newInjured.age));
             psInsert.setString(7, newInjured.sicknessDetail);
             psInsert.setString(8, Integer.toString(newInjured.shelterNo));
-            psInsert.setString(9, newInjured.treatedByPersonID);
+            psInsert.setString(9, doctor);
             psInsert.setString(10, newInjured.hospital);
             psInsert.executeUpdate();
         }

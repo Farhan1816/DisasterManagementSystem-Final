@@ -27,12 +27,14 @@ public class InjuredInfoController extends Controller implements Initializable {
     @FXML
     private ChoiceBox<String>Name;
 
-    private String name, contact, email, address, gender, age, death, shelterNo, doctorID, injury, hospital;
+    private String name, contact, email, address, gender, age, shelterNo, doctorID, injury, hospital;
 
     private Stage stage;
     private Scene scene;
     private Parent root;
     public static int option;
+
+    InjuredOrSick prevSick;
 
     public InjuredInfoController(int val)
     {
@@ -88,17 +90,22 @@ public class InjuredInfoController extends Controller implements Initializable {
                 shelterNo = rs.getString(8);
                 doctorID = rs.getString(9);
                 hospital = rs.getString(10);
+
+                System.out.println(doctorID);
             }
 
-            Contact.setText(contact);
-            Email.setText(email);
-            Address.setText(address);
-            Gender.setText(gender);
-            Age.setText(age);
+            prevSick= new InjuredOrSick(name,contact,email,address, gender,Integer.valueOf(age),Integer.valueOf(shelterNo),doctorID,injury,hospital);
+
+            Contact.setText(prevSick.contact);
+            Email.setText(prevSick.email);
+            Address.setText(prevSick.address);
+            Gender.setText(prevSick.gender);
+            Age.setText(Integer.toString(prevSick.age));
             InjuryDetails.setText(injury);
-            ShelterNo.setText(shelterNo);
+            ShelterNo.setText(Integer.toString(prevSick.shelterNo));
             DoctorID.setText(doctorID);
-            Hospital.setText(hospital);
+            Hospital.setText(prevSick.hospital);
+
         }
         catch (SQLException i)
         {

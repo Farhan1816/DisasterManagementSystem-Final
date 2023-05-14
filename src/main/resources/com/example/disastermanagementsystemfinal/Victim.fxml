@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,31 +12,81 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="Disaster1" layoutX="28.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster1">
+            <Button fx:id="Disaster1" layoutX="28.0" layoutY="156.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster1">
                <font>
-                  <Font name="Mallanna" size="28.0" />
+                  <Font name="NATS" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="Disaster2" layoutX="181.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster2">
+            <Button fx:id="Disaster2" layoutX="180.0" layoutY="156.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster2">
                <font>
-                  <Font name="Mallanna" size="28.0" />
+                  <Font name="NATS" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="Disaster3" layoutX="334.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster3">
+            <Button fx:id="Disaster3" layoutX="330.0" layoutY="156.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster3">
                <font>
-                  <Font name="Mallanna" size="28.0" />
+                  <Font name="NATS" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="Disaster4" layoutX="488.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster4">
+            <Button fx:id="Disaster4" layoutX="482.0" layoutY="156.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster4">
                <font>
-                  <Font name="Mallanna" size="28.0" />
+                  <Font name="NATS" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="Disaster5" layoutX="640.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster5">
+            <Button fx:id="Disaster5" layoutX="633.0" layoutY="156.0" mnemonicParsing="false" onAction="#switchPage" prefHeight="121.0" prefWidth="140.0" text="Disaster5">
                <font>
-                  <Font name="Mallanna" size="28.0" />
+                  <Font name="NATS" size="25.0" />
                </font>
             </Button>
+            <Label fx:id="Location1" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="290.0" prefHeight="37.0" prefWidth="107.0" text="Label">
+               <font>
+                  <Font name="Mallanna" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="Location2" alignment="CENTER" contentDisplay="CENTER" layoutX="197.0" layoutY="290.0" prefHeight="37.0" prefWidth="107.0" text="Label">
+               <font>
+                  <Font name="Mallanna" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="Location3" alignment="CENTER" contentDisplay="CENTER" layoutX="347.0" layoutY="290.0" prefHeight="37.0" prefWidth="107.0" text="Label">
+               <font>
+                  <Font name="Mallanna" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="Location4" alignment="CENTER" contentDisplay="CENTER" layoutX="499.0" layoutY="290.0" prefHeight="37.0" prefWidth="107.0" text="Label">
+               <font>
+                  <Font name="Mallanna" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="Location5" alignment="CENTER" contentDisplay="CENTER" layoutX="650.0" layoutY="290.0" prefHeight="37.0" prefWidth="107.0" text="Label">
+               <font>
+                  <Font name="Mallanna" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="Date1" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="327.0" prefHeight="37.0" prefWidth="107.0" text="Label">
+               <font>
+                  <Font name="Mallanna" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="Date2" alignment="CENTER" contentDisplay="CENTER" layoutX="197.0" layoutY="327.0" prefHeight="37.0" prefWidth="107.0" text="Label">
+               <font>
+                  <Font name="Mallanna" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="Date3" alignment="CENTER" contentDisplay="CENTER" layoutX="347.0" layoutY="327.0" prefHeight="37.0" prefWidth="107.0" text="Label">
+               <font>
+                  <Font name="Mallanna" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="Date4" alignment="CENTER" contentDisplay="CENTER" layoutX="499.0" layoutY="327.0" prefHeight="37.0" prefWidth="107.0" text="Label">
+               <font>
+                  <Font name="Mallanna" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="Date5" alignment="CENTER" contentDisplay="CENTER" layoutX="650.0" layoutY="327.0" prefHeight="37.0" prefWidth="107.0" text="Label">
+               <font>
+                  <Font name="Mallanna" size="19.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>
