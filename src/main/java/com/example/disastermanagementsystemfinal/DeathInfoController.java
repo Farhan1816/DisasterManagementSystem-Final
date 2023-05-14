@@ -29,6 +29,8 @@ public class DeathInfoController extends Controller implements Initializable {
 
     private String name, contact, email, address, gender, age, death, shelterNo, doctorID;
 
+    Dead prevDead;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -89,14 +91,24 @@ public class DeathInfoController extends Controller implements Initializable {
                 doctorID = rs.getString(9);
             }
 
-            Contact.setText(contact);
-            Email.setText(email);
-            Address.setText(address);
-            Gender.setText(gender);
-            Age.setText(age);
-            CauseofDeath.setText(death);
-            ShelterNo.setText(shelterNo);
-            DoctorID.setText(doctorID);
+            prevDead.name = name;
+            prevDead.contact=contact;
+            prevDead.email=email;
+            prevDead.address=address;
+            prevDead.gender=gender;
+            prevDead.age=Integer.valueOf(age);
+            prevDead.deathCause=death;
+            prevDead.shelterNo=Integer.valueOf(shelterNo);
+            prevDead.treatedByPersonID = doctorID;
+
+            Contact.setText(prevDead.contact);
+            Email.setText(prevDead.email);
+            Address.setText(prevDead.address);
+            Gender.setText(prevDead.gender);
+            Age.setText(Integer.toString(prevDead.age));
+            CauseofDeath.setText(prevDead.deathCause);
+            ShelterNo.setText(Integer.toString(prevDead.shelterNo));
+            DoctorID.setText(prevDead.treatedByPersonID);
         }
         catch (SQLException i)
         {
