@@ -23,6 +23,8 @@ public class AddDeath {
         option=val;
     }
 
+    Dead newDead;
+
     public AddDeath()
     {
 
@@ -40,6 +42,7 @@ public class AddDeath {
     String name, contact, email, address, gender, age, death, shelterNo, doctor;
 
 
+
     void getValue()
     {
         name = Name.getText();
@@ -51,6 +54,7 @@ public class AddDeath {
         death = DeathCause.getText();
         shelterNo= ShelterNo.getText();
         doctor=DoctorID.getText();
+        newDead= new Dead(name, contact, email, address, gender, Integer.valueOf(age), Integer.valueOf(shelterNo),doctor,death);
 
     }
 
@@ -82,15 +86,15 @@ public class AddDeath {
             psInsert = connection1.prepareStatement("set sql_safe_updates=0;");
             psInsert.executeUpdate();
             psInsert = connection1.prepareStatement("insert into death(Namedth, Contact, Email, Address, Gender, Age, Death , ShelterNo, DoctorID) values(?,?,?,?,?,?,?,?,?)");
-            psInsert.setString(1, name);
-            psInsert.setString(2, contact);
-            psInsert.setString(3, email);
-            psInsert.setString(4, address);
-            psInsert.setString(5, gender);
-            psInsert.setString(6, age);
-            psInsert.setString(7, death);
-            psInsert.setString(8, shelterNo);
-            psInsert.setString(9, doctor);
+            psInsert.setString(1, newDead.name);
+            psInsert.setString(2, newDead.contact);
+            psInsert.setString(3, newDead.email);
+            psInsert.setString(4, newDead.address);
+            psInsert.setString(5, newDead.gender);
+            psInsert.setString(6, Integer.toString(newDead.age));
+            psInsert.setString(7, newDead.deathCause);
+            psInsert.setString(8, Integer.toString(newDead.shelterNo));
+            psInsert.setString(9, newDead.treatedByPersonID);
 
             psInsert.executeUpdate();
         }

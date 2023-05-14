@@ -17,7 +17,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class PrevDisasterCasualtiesController implements Initializable {
+public class PrevDisasterCasualtiesController extends Controller implements Initializable {
 
     public static int option;
 
@@ -281,21 +281,6 @@ public class PrevDisasterCasualtiesController implements Initializable {
             e.printStackTrace();
         }
 
-    }
-
-    public void logout(ActionEvent e)
-    {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            Scene scene = new Scene((root));
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch (Exception i)
-        {
-            i.printStackTrace();
-        }
     }
 
     public void back(ActionEvent e)

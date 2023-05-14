@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -17,10 +18,11 @@ import java.net.ConnectException;
 import java.net.URL;
 import java.nio.channels.ConnectionPendingException;
 import java.sql.Connection;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.sql.*;
 
-public class NewDisasterController implements Initializable {
+public class NewDisasterController extends Controller implements Initializable {
 
     private Stage stage;
     private Scene scene;
@@ -41,7 +43,7 @@ public class NewDisasterController implements Initializable {
     private ChoiceBox<String>District;
 
     @FXML
-    private TextField ApproximateDate;
+    private DatePicker ApproximateDate;
 
     @FXML
     private TextField ApproximateTime;
@@ -85,27 +87,14 @@ public class NewDisasterController implements Initializable {
         type= DisasterType.getValue();
         location = Location.getText();
         district = District.getValue();
-        date = ApproximateDate.getText();
+        LocalDate local=ApproximateDate.getValue();
+        local = ApproximateDate.getValue();
+        date = local.toString();
         time = ApproximateTime.getText();
         intensity=Intensity.getValue();
         injured=0;
         death=0;
     }
-    public void logout(ActionEvent e)
-    {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            Scene scene = new Scene((root));
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch (Exception i)
-        {
-            i.printStackTrace();
-        }
-    }
-
     public void back(ActionEvent e)
     {
         try {

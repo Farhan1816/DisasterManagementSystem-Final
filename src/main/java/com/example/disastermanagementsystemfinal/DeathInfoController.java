@@ -18,7 +18,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class DeathInfoController implements Initializable {
+public class DeathInfoController extends Controller implements Initializable {
 
     @FXML
     private Label Contact, Email, Address, Gender, Age, CauseofDeath, ShelterNo, DoctorID;
@@ -28,6 +28,8 @@ public class DeathInfoController implements Initializable {
     private ChoiceBox<String>Name;
 
     private String name, contact, email, address, gender, age, death, shelterNo, doctorID;
+
+    Dead prevDead;
 
     private Stage stage;
     private Scene scene;
@@ -89,14 +91,24 @@ public class DeathInfoController implements Initializable {
                 doctorID = rs.getString(9);
             }
 
-            Contact.setText(contact);
-            Email.setText(email);
-            Address.setText(address);
-            Gender.setText(gender);
-            Age.setText(age);
-            CauseofDeath.setText(death);
-            ShelterNo.setText(shelterNo);
-            DoctorID.setText(doctorID);
+            prevDead.name = name;
+            prevDead.contact=contact;
+            prevDead.email=email;
+            prevDead.address=address;
+            prevDead.gender=gender;
+            prevDead.age=Integer.valueOf(age);
+            prevDead.deathCause=death;
+            prevDead.shelterNo=Integer.valueOf(shelterNo);
+            prevDead.treatedByPersonID = doctorID;
+
+            Contact.setText(prevDead.contact);
+            Email.setText(prevDead.email);
+            Address.setText(prevDead.address);
+            Gender.setText(prevDead.gender);
+            Age.setText(Integer.toString(prevDead.age));
+            CauseofDeath.setText(prevDead.deathCause);
+            ShelterNo.setText(Integer.toString(prevDead.shelterNo));
+            DoctorID.setText(prevDead.treatedByPersonID);
         }
         catch (SQLException i)
         {
@@ -148,21 +160,6 @@ public class DeathInfoController implements Initializable {
             e.printStackTrace();
         }
 
-    }
-
-    public void logout(ActionEvent e)
-    {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            Scene scene = new Scene((root));
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch (Exception i)
-        {
-            i.printStackTrace();
-        }
     }
 
     public void back(ActionEvent e)
