@@ -65,6 +65,9 @@ public class AddInjured implements Initializable {
         if(!Hospital.getItems().contains(hospital)){
             Hospital.getItems().add(hospital);
         }
+
+        newInjured = new InjuredOrSick(name, contact, email, address, gender, Integer.valueOf(age), Integer.valueOf(shelterNo), doctor, injury, hospital);
+
     }
 
     public void SetValues()
@@ -95,16 +98,16 @@ public class AddInjured implements Initializable {
             psInsert = connection1.prepareStatement("set sql_safe_updates=0;");
             psInsert.executeUpdate();
             psInsert = connection1.prepareStatement("insert into injured(NameInj, Contact, Email, Address, Gender, Age, Injury, shelterNo, doctorID, HospitalName) values(?,?,?,?,?,?,?,?,?,?)");
-            psInsert.setString(1, name);
-            psInsert.setString(2, contact);
-            psInsert.setString(3, email);
-            psInsert.setString(4, address);
-            psInsert.setString(5, gender);
-            psInsert.setString(6, age);
-            psInsert.setString(7, injury);
-            psInsert.setString(8, shelterNo);
-            psInsert.setString(9, doctor);
-            psInsert.setString(10, hospital);
+            psInsert.setString(1, newInjured.name);
+            psInsert.setString(2, newInjured.contact);
+            psInsert.setString(3, newInjured.email);
+            psInsert.setString(4, newInjured.address);
+            psInsert.setString(5, newInjured.gender);
+            psInsert.setString(6, Integer.toString(newInjured.age));
+            psInsert.setString(7, newInjured.sicknessDetail);
+            psInsert.setString(8, Integer.toString(newInjured.shelterNo));
+            psInsert.setString(9, newInjured.treatedByPersonID);
+            psInsert.setString(10, newInjured.hospital);
             psInsert.executeUpdate();
         }
 

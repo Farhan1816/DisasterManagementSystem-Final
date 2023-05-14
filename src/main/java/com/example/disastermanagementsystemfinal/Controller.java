@@ -25,4 +25,6 @@ public abstract class Controller {
             i.printStackTrace();
         }
     }
+
+    public abstract void back(ActionEvent e);
 }

@@ -1,5 +1,7 @@
 package com.example.disastermanagementsystemfinal;
 
+import javax.xml.transform.sax.TemplatesHandler;
+
 abstract public class Person {
     static int personCount=0;
     String name, contact, email, address, gender;
@@ -166,24 +168,21 @@ class Victim extends Person{
 
     static int victimCount=0;
 
-    int shelterType;
-    int supportType, shelterNo, bil=0,payType, paid, due, financialSupport=0;
+    int  shelterNo, bil=0,payType, paid, due, financialSupport=0;
     boolean treatInfo=false;
 
+    String treatedByPersonID;
     String supportRequestDetail;
 
-    Victim(String name, String contact, String email, String address, String gender, int age, int shelterType, int shelterNo, int supportType, int payType, String supportRequestDetail)
+    String hospital;
+
+    Victim(String name, String contact, String email, String address, String gender, int age,  int shelterNo, String treatedByPersonID)
     {
         super(name, contact, email, address, gender, age);
 
         Victim.victimCount++;
-
-        this.shelterType=shelterType;
         this.shelterNo=shelterNo;
-        this.supportType=supportType;
-        this.payType=payType;
-
-        this.supportRequestDetail=supportRequestDetail;
+        this.treatedByPersonID= treatedByPersonID;
 
     }
 
@@ -203,26 +202,22 @@ class Victim extends Person{
     void TreatUp(boolean treatInfo){
         this.treatInfo=treatInfo;
     }
-
-    void FurtherSup(int supportType, String supportRequestDetail){
-        this.supportType=supportType;
-        this.supportRequestDetail=supportRequestDetail;
-    }
 }
 
 class InjuredOrSick extends Victim{
     static int injuredCount=0;
+
+    String hospital;
     int severity;
     String sicknessDetail;
     String treatedByPersonID ;
-    InjuredOrSick(String name, String contact, String email, String address, String gender, int age, int shelterType, int shelterNo, int supportType, int payType, String sicknessDetail, int severity, String treatedByPersonID){
-        super(name, contact, email, address, gender, age, shelterType, shelterNo, supportType, payType, treatedByPersonID);
+    InjuredOrSick(String name, String contact, String email, String address, String gender, int age,int shelterNo, String treatedByPersonID, String sicknessDetail, String hospital){
+        super(name, contact, email, address, gender, age,  shelterNo, treatedByPersonID);
 
         injuredCount++;
 
         this.sicknessDetail=sicknessDetail;
-        this.severity=severity;
-        this.treatedByPersonID=treatedByPersonID;
+        this.hospital=hospital;
     }
 
     void severityUp(int severity){
@@ -234,12 +229,12 @@ class InjuredOrSick extends Victim{
 class Dead extends Victim{
     static int deathCount=0;
     int bodyClaimedStatus;
-    Dead(String name, String contact, String email, String address, String gender, int age, int shelterType, int shelterNo, int supportType, int payType, String treatedByPersonID){
-        super(name, contact, email, address, gender, age, shelterType, shelterNo, supportType, payType, treatedByPersonID);
+    String deathCause;
+    Dead(String name, String contact, String email, String address, String gender, int age, int shelterNo, String treatedByPersonID, String deathCause){
+        super(name, contact, email, address, gender, age,  shelterNo, treatedByPersonID);
 
         deathCount++;
-
-        this.bodyClaimedStatus=bodyClaimedStatus;
+        this.deathCause=deathCause;
     }
 
     void ClaimingStatusUp(int bodyClaimedStatus){
